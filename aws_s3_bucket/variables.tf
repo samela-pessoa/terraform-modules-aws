@@ -1,3 +1,8 @@
+variable "state_key" {
+  description = "Chave do arquivo de estado no S3"
+  type        = string
+}
+
 # Nome do projeto
 variable "project" {
   description = "Nome do projeto relacionado ao bucket"
@@ -40,7 +45,3 @@ variable "region_abbreviations" {
   }
 }
 
-variable "state_key" {
-  description = "Chave do arquivo de estado no S3"
-  type        = string
-}
