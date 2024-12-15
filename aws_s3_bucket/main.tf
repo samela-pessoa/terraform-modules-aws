@@ -18,7 +18,6 @@ resource "random_integer" "bucket_suffix" {
 # Cria o bucket S3 com nome gerado dinamicamente
 resource "aws_s3_bucket" "this" {
   bucket = "s3-${var.project}-${lookup(var.region_abbreviations, var.region)}-${var.env}-${random_integer.bucket_suffix.result}"
-
   tags = var.tags
 }
 
