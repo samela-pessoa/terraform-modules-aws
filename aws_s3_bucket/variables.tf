@@ -40,7 +40,6 @@ variable "region_abbreviations" {
   }
 }
 
-#
 variable "state_key" {
   description = "Chave do arquivo de estado no S3"
   type        = string
