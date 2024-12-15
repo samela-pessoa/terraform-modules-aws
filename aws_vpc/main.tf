@@ -3,13 +3,13 @@ resource "aws_vpc" "vpc" {
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
-    Name = var.name
+    Name = "vpc-${var.project}-${lookup(var.region_abbreviations, var.region)}-${var.env}"
   }
 }
 
 resource "aws_route_table" "route_table" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.vpc.id
   tags = {
-    Name = "${var.name}-route-table"
+    Name = "${aws_vpc.vpc.tags["Name"]}-route-table"
   }
 }
