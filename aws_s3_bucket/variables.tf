@@ -39,3 +39,8 @@ variable "region_abbreviations" {
     "ap-northeast-1"  = "an1"
   }
 }
+
+variable "state_key" {
+  description = "Chave do arquivo de estado no S3"
+  type        = string
+}
